@@ -5,10 +5,12 @@ const ChatBox = () => {
     {
       id: 1,
       text: "Hello there",
+      name:"Busand"
     },
     {
       id: 2,
       text: "Hi",
+      name:"Andrew"
     },
   ];
 

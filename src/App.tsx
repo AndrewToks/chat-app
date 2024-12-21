@@ -1,5 +1,6 @@
 import NavBar from "./components/NavBar"
 import ChatRoom from "./pages/ChatRoom"
+
 // import Login from "./pages/Login"
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <div>
       <NavBar />
       {/* <Login /> */}
-      <ChatRoom />
+     <ChatRoom />
     </div>
   )
 }

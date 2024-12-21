@@ -1,8 +1,5 @@
+const Message = (props: { message: string }) => {
+  return <div>{props.message}</div>;
+};
 
-const Message = ({ message }) => {
-  return (
-    <div>Message</div>
-  )
-}
-
-export default Message
+export default Message;

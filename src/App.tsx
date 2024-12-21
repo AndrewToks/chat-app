@@ -1,5 +1,6 @@
 import NavBar from "./components/NavBar"
-import Login from "./pages/Login"
+import ChatRoom from "./pages/ChatRoom"
+// import Login from "./pages/Login"
 
 function App() {
 
@@ -7,7 +8,8 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Login />
+      {/* <Login /> */}
+      <ChatRoom />
     </div>
   )
 }

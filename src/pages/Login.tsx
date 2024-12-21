@@ -8,7 +8,7 @@ const Login = () => {
                         Join the conversation,meet new people, and make 
                         connections in one shared room.
                     </p>
-                    <button className="btn btn-primary">Login With Google. </button>
+                    <button className="btn btn-active btn-neutral">LOGIN WITH GOOGLE</button>
                 </div>
             </div>
         </div>

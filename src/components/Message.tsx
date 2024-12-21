@@ -1,12 +1,12 @@
 type MessageProps = {
   message: {
     id: number;
-    message: string;
+    text: string;
   };
 };
 
 const Message = ({ message }: MessageProps) => {
-  return <div>{message.message}</div>;
+  return <div>{message.text}</div>;
 };
 
 export default Message;

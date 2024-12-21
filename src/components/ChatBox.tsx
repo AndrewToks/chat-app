@@ -4,11 +4,11 @@ const ChatBox = () => {
   const messages = [
     {
       id: 1,
-      message: "Hello there",
+      text: "Hello there",
     },
     {
       id: 2,
-      message: "Hi",
+      text: "Hi",
     },
   ];
 

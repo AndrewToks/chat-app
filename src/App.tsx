@@ -1,11 +1,14 @@
-
-import './App.css'
+import NavBar from "./components/NavBar"
+import Login from "./pages/Login"
 
 function App() {
 
 
   return (
-    <div>Hello World</div>
+    <div>
+      <NavBar />
+      <Login />
+    </div>
   )
 }
 

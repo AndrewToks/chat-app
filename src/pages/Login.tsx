@@ -1,8 +1,15 @@
 import { UserAuth } from "../context/AuthContext"
 
 const Login = () => {
-    const {currentUser} = UserAuth();
-    console.log(currentUser);
+    const {currentUser,signinWithGoogle} = UserAuth();
+
+    const handleLogin = async () =>{
+        try{
+            await signinWithGoogle();
+        } catch(error){
+            console.log(error);   
+        }
+    }
     
     return (
         <div className="hero bg-base-200 min-h-screen">
@@ -13,7 +20,7 @@ const Login = () => {
                         Join the conversation,meet new people, and make 
                         connections in one shared room.
                     </p>
-                    <button className="btn btn-active btn-neutral">LOGIN WITH GOOGLE</button>
+                    <button onClick={handleLogin} className="btn btn-active btn-neutral">LOGIN WITH GOOGLE</button>
                 </div>
             </div>
         </div>

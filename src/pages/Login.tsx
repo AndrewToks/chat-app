@@ -1,7 +1,7 @@
 import { UserAuth } from "../context/AuthContext"
 
 const Login = () => {
-    const {currentUser} = UserAuth()
+    const {currentUser} = UserAuth();
     console.log(currentUser);
     
     return (

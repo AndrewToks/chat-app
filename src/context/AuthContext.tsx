@@ -1,25 +1,47 @@
-//create context
+import React, { createContext, useContext, useState, ReactNode } from "react";
+import { GoogleAuthProvider,signInWithRedirect } from "firebase/auth";
+import { auth } from "../firebase";
 
-import { createContext, useContext } from "react";
+interface AuthContextType {
+    currentUser: any;
+    setCurrentUser: React.Dispatch<React.SetStateAction<any>>;
+}
 
-const AuthContext = createContext();
-//Provider Context
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider = ({children}) =>{
-    const [currentUser,setCurrentUser] = useState(null);
+interface AuthProviderProps {
+    children: ReactNode;
+}
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+    const [currentUser, setCurrentUser] = useState<any>(null);
+
+
+    //signin with google
+    const signinWithGoogle = ()=>{
+        const provider = new GoogleAuthProvider();
+        signInWithRedirect(auth,provider);
+    }
+
+
 
     const value = {
         currentUser,
-        setCurrentUser
-    }
+        setCurrentUser,
+        signinWithGoogle
+    };
 
     return (
         <AuthContext.Provider value={value}>
             {children}
         </AuthContext.Provider>
-    )
-}
+    );
+};
 
-export const UserAuth = () => {
-    return useContext(AuthContext)
-}
+export const UserAuth = (): AuthContextType => {
+    const context = useContext(AuthContext);
+    if (context === undefined) {
+        throw new Error("useAuth must be used within an AuthProvider");
+    }
+    return context;
+};

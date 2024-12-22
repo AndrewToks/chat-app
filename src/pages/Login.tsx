@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { UserAuth } from "../context/AuthContext"
 
 const Login = () => {
@@ -13,6 +14,9 @@ const Login = () => {
         }
     }
     
+    useEffect(()=>{
+
+    },[])
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content text-center">

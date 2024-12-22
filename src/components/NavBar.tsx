@@ -1,4 +1,5 @@
-const NavBar = () => {
+const NavBar = () => {    
+
     return (
         <div className="navbar bg-neutral text-neutral-content">
             <div className="containerWrap flex justify-between">

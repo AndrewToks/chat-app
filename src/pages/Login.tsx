@@ -2,6 +2,8 @@ import { UserAuth } from "../context/AuthContext"
 
 const Login = () => {
     const {currentUser,signinWithGoogle} = UserAuth();
+    console.log(currentUser);
+    
 
     const handleLogin = async () =>{
         try{

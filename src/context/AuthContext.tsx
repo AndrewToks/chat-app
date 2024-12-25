@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
-import { GoogleAuthProvider, onAuthStateChanged, signInWithRedirect } from "firebase/auth";
+import { GoogleAuthProvider, onAuthStateChanged, signInWithRedirect, signOut } from "firebase/auth";
 import { auth } from "../firebase";
 
 interface AuthContextType {
@@ -22,10 +22,15 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         signInWithRedirect(auth, provider);
     };
 
+    //signout
+
+    const logout = () => signOut(auth)
+
     const value = {
         currentUser,
         setCurrentUser,
         signinWithGoogle,
+        logout
     };
 
     //set currentUser

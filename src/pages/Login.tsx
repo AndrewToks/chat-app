@@ -10,7 +10,8 @@ const Login = () => {
         try {
             await signinWithGoogle();
         } catch (error) {
-            console.log(error);
+            console.error("Error during sign-in:", error);
+            alert("Failed to sign in. Please try again.");
         }
     };
 
@@ -34,6 +35,6 @@ const Login = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Login;
